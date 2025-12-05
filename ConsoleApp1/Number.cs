@@ -16,5 +16,25 @@ namespace ConsoleApp1
             return numbers.Where(n => n > 5).ToList();
 
         }
+
+
+        public static List<int> FilterNumbers(int[] numbers)
+        {
+            if (numbers == null)
+                throw new ArgumentNullException("numbers is null");
+
+            return numbers.Where(n => n > 5).ToList();
+
+        }
+
+
+        public static List<int> FilterNumbers(IEnumerable<int> numbers)
+        {
+            if (numbers == null)
+                throw new ArgumentNullException("numbers is null");
+
+            return numbers.Where(n => n > 5).ToList();
+
+        }
     }
 }
