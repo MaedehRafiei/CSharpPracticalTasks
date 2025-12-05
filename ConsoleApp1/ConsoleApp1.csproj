@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvenAndGreaterThanTen.cs" />
+    <Compile Include="Interfaces\IFilterCondition.cs" />
     <Compile Include="Number.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,5 +53,6 @@
     <None Include="App.config" />
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

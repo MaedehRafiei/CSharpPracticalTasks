@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,13 +29,15 @@ namespace ConsoleApp1
         }
 
 
-        public static List<int> FilterNumbers(IEnumerable<int> numbers)
+        public static List<int> FilterNumbers(IEnumerable<int> numbers, IFilterCondition filterCondition)
         {
             if (numbers == null || !numbers.Any())
                 throw new ArgumentNullException("numbers is null");
 
-            return numbers.Where(n => n > 5).ToList();
+            if (filterCondition == null)
+                throw new ArgumentNullException("filterCondition is null");
 
+            return numbers.Where(n => filterCondition.IsMatch(n)).ToList();
         }
     }
 }

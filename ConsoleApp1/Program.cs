@@ -27,8 +27,9 @@ namespace ConsoleApp1
             var input = Console.ReadLine();
             IEnumerable<int> numbers = input.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
 
-            var result = Number.FilterNumbers(numbers);
-            Console.WriteLine("numbers Greater Than 5 is : " + string.Join(", ", result));
+            var filterCondition = new EvenAndGreaterThanTen();
+            var result = Number.FilterNumbers(numbers, filterCondition);
+            Console.WriteLine("numbers even and greater 10  : " + string.Join(", ", result));
             Console.ReadLine();
 
         }
