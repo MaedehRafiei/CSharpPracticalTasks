@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         public static List<int> FilterNumbers(List<int> numbers)
         {
-            if (numbers == null)
+            if (numbers == null || !numbers.Any())
                 throw new ArgumentNullException("numbers is null");
 
             return numbers.Where(n => n > 5).ToList();
