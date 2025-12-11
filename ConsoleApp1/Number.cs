@@ -48,20 +48,20 @@ namespace ConsoleApp1
         }
 
 
-        public static IEnumerable<T> FilterNumbers<T>(IEnumerable<T> numbers, Func<T, bool> condition)
-        {
-            if (numbers == null || !numbers.Any())
-                throw new ArgumentNullException("numbers is null");
+        //public static IEnumerable<T> FilterNumbers<T>(IEnumerable<T> numbers, Func<T, bool> condition)
+        //{
+        //    if (numbers == null || !numbers.Any())
+        //        throw new ArgumentNullException("numbers is null");
 
-            if (condition == null)
-                throw new ArgumentNullException("filterCondition is null");
+        //    if (condition == null)
+        //        throw new ArgumentNullException("filterCondition is null");
 
-            foreach (var item in numbers)
-            {
-                if (condition(item))
-                    yield return item;
-            }
-        }
+        //    foreach (var item in numbers)
+        //    {
+        //        if (condition(item))
+        //            yield return item;
+        //    }
+        //}
 
     }
 }

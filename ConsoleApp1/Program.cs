@@ -69,15 +69,15 @@ namespace ConsoleApp1
             })
            .Where(n => n != -1);
 
-            var filtered = Number.FilterNumbers(numbers, n => n > 10 && n % 2 == 0);
+            var filtered = numbers.FilterNumbers(n => n > 10 && n % 2 == 0);
 
             Console.WriteLine("Numbers even and greater than 10:");
             foreach (var n in filtered)
             {
                 Console.WriteLine(n);
             }
-
             Console.ReadLine();
+
         }
 
 
