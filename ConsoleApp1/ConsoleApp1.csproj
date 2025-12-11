@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EvenAndGreaterThanTen.cs" />
+    <Compile Include="Extentions\NumberExtensions.cs" />
     <Compile Include="Interfaces\IFilterCondition.cs" />
     <Compile Include="Number.cs" />
     <Compile Include="Program.cs" />

@@ -29,13 +29,13 @@ namespace ConsoleApp1
         }
 
 
-        public static List<int> FilterNumbers(IEnumerable<int> numbers, IFilterCondition filterCondition)
+        public static List<T> FilterNumbers<T>(IEnumerable<T> numbers, IFilterCondition<T> filterCondition)
         {
             if (numbers == null || !numbers.Any())
-                throw new ArgumentNullException("numbers is null");
+                throw new ArgumentNullException(nameof(numbers));
 
             if (filterCondition == null)
-                throw new ArgumentNullException("filterCondition is null");
+                throw new ArgumentNullException(nameof(filterCondition));
 
             return numbers.Where(n => filterCondition.IsMatch(n)).ToList();
         }

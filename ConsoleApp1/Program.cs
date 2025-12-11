@@ -25,6 +25,8 @@ namespace ConsoleApp1
             
             Console.WriteLine("enter numbers");
             var input = Console.ReadLine();
+
+
             IEnumerable<int> numbers = input.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
 
             var filterCondition = new EvenAndGreaterThanTen();

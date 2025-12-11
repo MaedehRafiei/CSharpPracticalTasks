@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1
 {
-    public class EvenAndGreaterThanTen : IFilterCondition
+    public class EvenAndGreaterThanTen : IFilterCondition<int>
     {
         public bool IsMatch(int number)
         {

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Interfaces
 {
-    public interface IFilterCondition
+    public interface IFilterCondition<T>
     {
-        bool IsMatch(int number);
+        bool IsMatch(T number);
     }
 }
