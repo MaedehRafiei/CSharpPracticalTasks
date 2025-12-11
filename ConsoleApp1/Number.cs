@@ -48,7 +48,7 @@ namespace ConsoleApp1
         }
 
 
-        public static List<T> FilterNumbers<T>(IEnumerable<T> numbers, Func<T, bool> condition)
+        public static IEnumerable<T> FilterNumbers<T>(IEnumerable<T> numbers, Func<T, bool> condition)
         {
             if (numbers == null || !numbers.Any())
                 throw new ArgumentNullException("numbers is null");

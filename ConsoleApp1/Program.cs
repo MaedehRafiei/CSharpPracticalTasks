@@ -50,7 +50,7 @@ namespace ConsoleApp1
     .Select(x => {
         if (int.TryParse(x, out int n))
             return n;
-        return -1;  // عدد غیرمعتبر را می‌توان نادیده گرفت
+        return -1;  
         })
     .Where(n => n != -1);
 
