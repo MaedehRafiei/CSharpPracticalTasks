@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -28,7 +26,29 @@ namespace ConsoleApp1
         }
 
 
-        public static List<int> FilterNumbers(IEnumerable<int> numbers, Func<int, bool> condition)
+        public static List<object> FilterNumbers(IEnumerable<object> numbers, Func<object, bool> condition)
+        {
+            if (numbers == null || !numbers.Any())
+                throw new ArgumentNullException("numbers is null");
+
+            if (condition == null)
+                throw new ArgumentNullException("filterCondition is null");
+
+            List<object> result = new List<object>();
+
+
+            foreach (var item in numbers)
+            {
+                if (condition(item))
+                    result.Add(item);
+            }
+
+            return result;
+
+        }
+
+
+        public static List<T> FilterNumbers<T>(IEnumerable<T> numbers, Func<T, bool> condition)
         {
             if (numbers == null || !numbers.Any())
                 throw new ArgumentNullException("numbers is null");
@@ -37,6 +57,8 @@ namespace ConsoleApp1
                 throw new ArgumentNullException("filterCondition is null");
 
             return numbers.Where(condition).ToList();
+
         }
+
     }
 }
