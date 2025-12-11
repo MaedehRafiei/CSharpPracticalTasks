@@ -45,20 +45,41 @@ namespace ConsoleApp1
             //Console.ReadLine();
 
 
-            IEnumerable<int> numbersGeneric = input
-    .Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries)
-    .Select(x => {
-        if (int.TryParse(x, out int n))
-            return n;
-        return -1;  
-        })
-    .Where(n => n != -1);
+            //        IEnumerable<int> numbersGeneric = input
+            //.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries)
+            //.Select(x => {
+            //    if (int.TryParse(x, out int n))
+            //        return n;
+            //    return -1;  
+            //    })
+            //.Where(n => n != -1);
 
-            var resultGeneric = Number.FilterNumbers(numbersGeneric, n => n > 10 && n % 2 == 0);
+            //        var resultGeneric = Number.FilterNumbers(numbersGeneric, n => n > 10 && n % 2 == 0);
 
-            Console.WriteLine("Generic method result: " + string.Join(", ", resultGeneric));
+            //        Console.WriteLine("Generic method result: " + string.Join(", ", resultGeneric));
+
+            //        Console.ReadLine();
+
+            IEnumerable<int> numbers = input
+           .Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries)
+           .Select(x => {
+               if (int.TryParse(x, out int n))
+                   return n;
+               return -1; // عدد نامعتبر را -1 قرار می‌دهیم
+            })
+           .Where(n => n != -1);
+
+            var filtered = Number.FilterNumbers(numbers, n => n > 10 && n % 2 == 0);
+
+            Console.WriteLine("Numbers even and greater than 10:");
+            foreach (var n in filtered)
+            {
+                Console.WriteLine(n);
+            }
 
             Console.ReadLine();
         }
+
+
     }
 }

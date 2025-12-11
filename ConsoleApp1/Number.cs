@@ -56,8 +56,11 @@ namespace ConsoleApp1
             if (condition == null)
                 throw new ArgumentNullException("filterCondition is null");
 
-            return numbers.Where(condition).ToList();
-
+            foreach (var item in numbers)
+            {
+                if (condition(item))
+                    yield return item;
+            }
         }
 
     }
